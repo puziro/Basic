@@ -88,7 +88,7 @@ public class Basic extends Activity {
 	public static final String DATABASES_DIR = "databases";
 	public static final String SAMPLES_DIR   = "Sample_Programs";
 	public static final String SOURCE_SAMPLES_PATH = SOURCE_DIR + '/' + SAMPLES_DIR;
-
+	public static final String LANG_ENV = Locale.getDefault().getLanguage() ;
 	public static String AppPath = "rfo-basic";				// Set to the path name for application directories
 	public static boolean isAPK = false;					// If building APK, set true
 	private static boolean apkCreateDataDir;				// If APK needs a /data/ directory, set true
@@ -338,7 +338,11 @@ public class Basic extends Activity {
 		Run.running_bas = "";
 		lines = new ArrayList<Run.ProgramLine>();			// The lines array list is the program
 		lines.add(new Run.ProgramLine(""));					// add an empty string to lines
-		Editor.DisplayText="REM Start of BASIC! Program\n";	// Display text is the editors program storage for display
+		if (LANG_ENV.equals("ja"))                               // Added to localize
+		Editor.DisplayText="REM Basic!プログラムスタート";		// Added to localize
+		else {
+			Editor.DisplayText="REM Start of Basic! Program";	// Display text is the editors program storage for display
+			}
 	}
 
 	private static boolean AreSamplesLoaded() {		// Sample program files have not been loaded
@@ -874,20 +878,39 @@ public class Basic extends Activity {
 		public void doFirstLoad() {
 			// The first load is a short program of comments that will be displayed
 			// by the Editor
-
-			Editor.DisplayText = "!!\n\n" +			// Initialize the Display Program Lines
-					"Welcome to BASIC!\n\n" +
-					"Press Menu->More->About\n" +
-					"to get more information\n" +
-					"about this release, and\n" +
-					"to see the User's Manual,\n" +
-					"De Re BASIC!\n\n" +
-					"Press Menu->Clear to clear\n" +
-					"this message and start\n" +
-					"writing your own BASIC!\n" +
-					"program.\n\n";
+			if (LANG_ENV.equals("ja"))                               // Added to localize
+                Editor.DisplayText = "!!\n\n" +			         // Added to localize
+                        "BASIC!へようこそ\n\n" +                 // Added to localize
+                        "お使いのリリースについての\n" +         // Added to localize
+                        "詳しい情報は、右上のメニュー→\n" +     // Added to localize
+                        "「BASIC!について」を選択して\n" +          // Added to localize
+                        "下さい。マニュアルもそこから入手\n" +       // Added to localize
+                        "できます。現時点英語版のみです。\n\n" +     // Added to localize
+                        "このメッセージを消すには、右上の\n" +       // Added to localize
+                        "メニュー→「クリアー」を選択して\n" +       // Added to localize
+                        "下さい。それから、プログラムを入力\n" +      // Added to localize
+                        "入力して下さい。\n\n" +                          // Added to localize
+                        "注：もしプログラムがロードできない\n" +         // Added to localize
+                        "場合は、設定→開発者向けオプションの\n" +        // Added to localize
+                        "「アクティビティーを保持しない」に\n" +         // Added to localize
+                        "チェックが入っていないか確認して、\n" +         // Added to localize
+                        "入っていれば外して下さい。\n\n";                // Added to localize
+                else {
+                Editor.DisplayText = "!!\n\n" +            // Initialize the Display Program Lines
+                        "Welcome to BASIC!\n\n" +
+                        "Press Menu->More->About\n" +
+                        "to get more information\n" +
+                        "about this release, and\n" +
+                        "to see the User's Manual,\n" +
+                        "De Re BASIC!\n\n" +
+                        "Press Menu->Clear to clear\n" +
+                        "this message and start\n" +
+                        "writing your own BASIC!\n" +
+                        LANG_ENV +
+                        " program.\n\n";
+            }
 			int level = Build.VERSION.SDK_INT;
-			if (level >= 11) {
+			if (level >= 11 && !(LANG_ENV.equals("ja"))  ) {
 				Editor.DisplayText +=
 					"Note: if you can't load a\n" +
 					"program, check your settings.\n" +

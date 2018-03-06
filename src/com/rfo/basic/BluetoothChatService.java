@@ -297,7 +297,7 @@ public class BluetoothChatService {
                 		}
                 }
             } catch (IOException e) {
-                Log.e(TAG, "Socket Type: " + mSocketType + "listen() failed", e);
+                Log.e(TAG, "Socket Type: " + mSocketType + "listen() failed(E0002)", e);
             }
             mmServerSocket = tmp;
         }
@@ -316,7 +316,7 @@ public class BluetoothChatService {
                     // successful connection or an exception
                     socket = mmServerSocket.accept();
                 } catch (Exception e) {
-                    Log.e(TAG, "Socket Type: " + mSocketType + "accept() failed", e);
+                    Log.e(TAG, "Socket Type: " + mSocketType + "accept() failed(E0002)", e);
                     break;
                 }
 
@@ -337,7 +337,7 @@ public class BluetoothChatService {
                             try {
                                 socket.close();
                             } catch (IOException e) {
-                                Log.e(TAG, "Could not close unwanted socket", e);
+                                Log.e(TAG, "Could not close unwanted socket(E0003)", e);
                             }
                             break;
                         }
@@ -354,7 +354,7 @@ public class BluetoothChatService {
             try {
                 mmServerSocket.close();
             } catch (Exception e) {
-                Log.e(TAG, "Socket Type" + mSocketType + "close() of server failed", e);
+                Log.e(TAG, "Socket Type" + mSocketType + "close() of server failed(E0004)", e);
             }            
         }
     }
@@ -392,7 +392,7 @@ public class BluetoothChatService {
                 	}
                 } 
             } catch (Exception e) {
-                Log.e(TAG, "Socket Type: " + mSocketType + "create() failed", e);
+                Log.e(TAG, "Socket Type: " + mSocketType + "create() failed(E0005)", e);
             }
             
             mmSocket = tmp;
@@ -417,12 +417,12 @@ public class BluetoothChatService {
                 mmSocket.connect();
             } catch (Exception e) {
                 // Close the socket
-            	Log.e(TAG, "Connect run IOException ", e);
+            	Log.e(TAG, "Connect run IOException(E0006) ", e);
                 try {
                     mmSocket.close();
                 } catch (Exception e2) {
                     Log.e(TAG, "unable to close() " + mSocketType +
-                            " socket during connection failure", e2);
+                            " socket during connection failure(E0007)", e2);
                 }
                 connectionFailed();
                 return;
@@ -442,7 +442,7 @@ public class BluetoothChatService {
             try {
                 if (mmSocket != null) mmSocket.close();
             } catch (IOException e) {
-                Log.e(TAG, "close() of connect " + mSocketType + " socket failed", e);
+                Log.e(TAG, "close() of connect " + mSocketType + " socket failed(E0008)", e);
             }
         }
     }
@@ -469,7 +469,7 @@ public class BluetoothChatService {
                 tmpIn = socket.getInputStream();
                 tmpOut = socket.getOutputStream();
             } catch (IOException e) {
-                Log.e(TAG, "temp sockets not created", e);
+                Log.e(TAG, "temp sockets not created(E0009)", e);
             }
 
             mmInStream = tmpIn;
@@ -489,7 +489,7 @@ public class BluetoothChatService {
                     // Read from the InputStream
                     bytes = mmDataIS.read(buffer);
                 } catch (Exception e) {
-                    Log.e(TAG, "disconnected", e);
+                    Log.e(TAG, "disconnected(E0010)", e);
                     connectionLost();
                     break;
                 }
@@ -518,7 +518,7 @@ public class BluetoothChatService {
 //                mHandler.obtainMessage(Run.MESSAGE_WRITE, -1, -1, buffer)
 //                        .sendToTarget();
             } catch (IOException e) {
-                Log.e(TAG, "Exception during write", e);
+                Log.e(TAG, "Exception during write(E0011)", e);
             }
         }
 
@@ -526,7 +526,7 @@ public class BluetoothChatService {
             try {
                 mmSocket.close();
             } catch (IOException e) {
-                Log.e(TAG, "close() of connect socket failed", e);
+                Log.e(TAG, "close() of connect socket failed(E0012)", e);
             }
         }
     }

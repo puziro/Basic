@@ -123,12 +123,10 @@ This file is part of BASIC! for Android
 	<string name="no_icon">Could not create icon from icon file.</string>
 	<string name="instr_1">Select Cancel to go back to setup</string>
 	<string name="instr_2">or OK to try to create the shortcut anyway.</string>
-
+	
 	<!-- About screen text -->
 	<string name="about_text1">You are using version %s of BASIC!</string>
-	<string name="about_text2">\nThe Richard Feynman Observatory\nBASIC!
-								for Android\ncreated by Paul Laughton.\n\nTo
-								learn more about BASIC!,\nselect one of the following:</string>
+	<string name="about_text2">\nThe Richard Feynman Observatory\nBASIC! for Android\ncreated by Paul Laughton.\n\nTo learn more about BASIC!,\nselect one of the following:</string>
 	<!-- About button text -->
 	<string name="about_text_btn_home">BASIC! Home Page</string>
 	<string name="about_text_btn_forum">BASIC! User Forum</string>
@@ -137,6 +135,7 @@ This file is part of BASIC! for Android
 	<string name="about_text_btn_github">BASIC! on GitHub\nSource and bug reports</string>
 	<string name="about_text_btn_license">BASIC! Open-Source License\nThe GNU General Public License, version 3</string>
 	<string name="about_text_btn_privpol">BASIC! Privacy Policy</string>
+	<string name="about_btn_tomonokai">Basic! Tomonokai HP(Jp)</string>
 	<string name="Color_Scheme">Color Scheme</string>
 	<string name="Select_Color_Scheme">Select Color Scheme</string>
 	<string name="Custom_Colors">Custom Colors</string>
@@ -177,8 +176,8 @@ This file is part of BASIC! for Android
 	<string name="Enable_graphic_acceleration">Enable graphic acceleration</string>
 	<string name="Base_Drive">Base Drive</string>
 	<string name="Select_New_Base_Drive">Select New Base Drive</string>
-	<string name="Search_For:">Search For:</string>
-	<string name="Replace_With:">Replace With:</string>
+	<string name="Search_For">Search For:</string>
+	<string name="Replace_With">Replace With:</string>
 	<string name="Next">Next</string>
 	<string name="Done">Done</string>
 	<string name="Replace">Replace</string>
@@ -187,7 +186,7 @@ This file is part of BASIC! for Android
 	<string name="unnamed_program"> unnamed program</string>
 	<string name="Select_File_To_Load">Select File To Load</string>
 	<string name="Select_file_to_Delete">Select file to Delete</string>
-	<string name="Save_to ">Save to </string>
+	<string name="Save_to">Save to </string>
 	<string name="Saved">Saved</string>
 	<string name="File_not_saved">File not saved:</string>
 	<string name="Format_your_program">Format your program?</string>
@@ -224,5 +223,8 @@ This file is part of BASIC! for Android
 	<string name="System_Error">System Error: </string>
 	<string name="Nothing_found_to_replace">Nothing found to replace</string>
 	<string name="not_found"> not found.</string>
-	
+	<string name="REM_Strat_of_Basic">REM Start of BASIC! Program</string>
+    <string name="its_sample_programs">its sample programs.</string>
+	<string name="Start_of_Basic_Program">Start of Basic! Program</string>
+
 </resources>

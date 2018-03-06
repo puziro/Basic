@@ -64,6 +64,7 @@ public class About extends Activity {
 		setupButton(R.id.about_btn_github,   "https://github.com/RFO-BASIC");
 		setupButton(R.id.about_btn_license,  "http://laughton.com/basic/license.html");
 		setupButton(R.id.about_btn_privpol,  "http://rfo-basic.com/PrivacyPolicy.html");
+		setupButton(R.id.about_btn_tomonokai,  "http://basic.amsstudio.jp/");    //Added for Japanease Uses
 	}
 
 	private void setupButton(int id, final String url) {

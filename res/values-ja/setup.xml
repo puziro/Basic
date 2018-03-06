@@ -30,7 +30,7 @@ This file is part of BASIC! for Android
     <string name="version">01.91</string>
 
     <!-- The application name displayed in the Launcher -->
-    <string name="app_name">BASIC!</string>
+    <string name="app_name">BASIC!ML</string>
 
     <!-- The path name for application directories -->
     <string name="app_path">rfo-basic</string>

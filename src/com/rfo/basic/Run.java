@@ -2338,7 +2338,7 @@ public class Run extends Activity {
 		Log.v(LOGTAG, "onCreate " + this.toString());
 
 		if (Basic.lines == null) {
-			Log.e(LOGTAG, "onCreate: Lost context. Bail out.");
+			Log.e(LOGTAG, "onCreate: Lost context. Bail out.(E1301)");
 			finish();
 			return;
 		}
@@ -6657,7 +6657,7 @@ public class Run extends Activity {
 		long value = args[0];
 		long bits = args[1];
 
-		EvalNumericExpressionIntValue = (bits < 0) ? (value << -bits) : (value >> bits);;
+		EvalNumericExpressionIntValue = (bits < 0) ? (value << -bits) : (value >> bits);
 		EvalNumericExpressionValue = EvalNumericExpressionIntValue.doubleValue();
 		VarIsInt = true;
 		return true;

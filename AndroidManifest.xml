@@ -41,7 +41,6 @@ This file is part of BASIC! for Android
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
-    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -70,7 +69,7 @@ This file is part of BASIC! for Android
     <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
     <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
 
-    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="18" />
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="18" />
 
     <supports-screens android:xlargeScreens="true" />
 
@@ -80,7 +79,7 @@ This file is part of BASIC! for Android
         android:icon="@drawable/icon"
         android:label="@string/app_name" >
         <receiver
-            android:name=".BootUpReceiver"
+            android:name="com.rfo.basic.BootUpReceiver"
             android:enabled="false" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -91,7 +90,7 @@ This file is part of BASIC! for Android
 
         <activity
             android:id="@+id/basic_screen"
-            android:name="Basic"
+            android:name="com.rfo.basic.Basic"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/app_name" >
 
@@ -115,7 +114,7 @@ This file is part of BASIC! for Android
         </activity>
 
         <activity
-            android:name="LauncherShortcuts"
+            android:name="com.rfo.basic.LauncherShortcuts"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="Launcher Shortcuts" >
 
@@ -129,7 +128,7 @@ This file is part of BASIC! for Android
         <activity-alias
             android:name="CreateShortcuts"
             android:label="Launcher Shortcuts"
-            android:targetActivity="LauncherShortcuts" >
+            android:targetActivity="com.rfo.basic.LauncherShortcuts" >
 
             <!-- This intent-filter allows your shortcuts to be created in the launcher. -->
             <intent-filter>
@@ -141,48 +140,48 @@ This file is part of BASIC! for Android
 
         <activity
             android:id="@+id/editor_screen"
-            android:name=".Editor"
+            android:name="com.rfo.basic.Editor"
             android:label="@string/editor_name"
             android:hardwareAccelerated="false" >
         </activity>
 
         <activity
             android:id="@+id/settings_screen"
-            android:name=".Settings"
+            android:name="com.rfo.basic.Settings"
             android:label="@string/settings_name" >
         </activity>
 
         <activity
             android:id="@+id/about_screen"
-            android:name=".About"
+            android:name="com.rfo.basic.About"
             android:label="@string/about_name"
             android:hardwareAccelerated="false" >
         </activity>
 
         <activity
             android:id="@+id/load_screen"
-            android:name=".LoadFile"
+            android:name="com.rfo.basic.LoadFile"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/load_name" >
         </activity>
 
         <activity
             android:id="@+id/delete_screen"
-            android:name=".Delete"
+            android:name="com.rfo.basic.Delete"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/delete_name" >
         </activity>
 
         <activity
             android:id="@+id/run_screen"
-            android:name=".Run"
+            android:name="com.rfo.basic.Run"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/run_name" >
         </activity>
 
         <activity
             android:id="@+id/search_screen"
-            android:name=".Search"
+            android:name="com.rfo.basic.Search"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/search_name"
             android:windowSoftInputMode="stateVisible|adjustResize"
@@ -191,21 +190,21 @@ This file is part of BASIC! for Android
 
         <activity
             android:id="@+id/format_screen"
-            android:name=".Format"
+            android:name="com.rfo.basic.Format"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/format_name" >
         </activity>
 
         <activity
             android:id="@+id/help_screen"
-            android:name=".Help"
+            android:name="com.rfo.basic.Help"
             android:label="@string/help_name"
             android:windowSoftInputMode="stateAlwaysVisible" >
         </activity>
 
         <activity
             android:id="@+id/gr_screen"
-            android:name=".GR"
+            android:name="com.rfo.basic.GR"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/gr_name"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
@@ -213,21 +212,21 @@ This file is part of BASIC! for Android
 
         <activity
             android:id="@+id/select_screen"
-            android:name=".Select"
+            android:name="com.rfo.basic.Select"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/select_name" >
         </activity>
 
         <activity
             android:id="@+id/text_input_screen"
-            android:name=".TextInput"
+            android:name="com.rfo.basic.TextInput"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/textinput_name" >
         </activity>
 
         <activity
             android:id="@+id/text_get_screen"
-            android:name=".TGet"
+            android:name="com.rfo.basic.TGet"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/textinput_name"
             android:windowSoftInputMode="stateVisible|adjustResize" >
@@ -235,7 +234,7 @@ This file is part of BASIC! for Android
 
         <activity
             android:id="@+id/web_view_screen"
-            android:name=".Web"
+            android:name="com.rfo.basic.Web"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/web_view_name"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
@@ -243,7 +242,7 @@ This file is part of BASIC! for Android
 
         <activity
             android:id="@+id/camera_screen"
-            android:name=".CameraView"
+            android:name="com.rfo.basic.CameraView"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="Camera"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
@@ -251,7 +250,7 @@ This file is part of BASIC! for Android
 
         <activity
             android:id="@+id/notify_screen"
-            android:name=".HandleNotify"
+            android:name="com.rfo.basic.HandleNotify"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="Notify"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
@@ -259,7 +258,7 @@ This file is part of BASIC! for Android
 
         <activity
             android:id="@+id/device_list_screen"
-            android:name=".DeviceListActivity"
+            android:name="com.rfo.basic.DeviceListActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/select_device"
             android:theme="@android:style/Theme.Dialog" >

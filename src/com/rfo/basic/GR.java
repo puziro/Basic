@@ -746,7 +746,7 @@ public class GR extends Activity {
 			}
 
 			if ((Run.RealDisplayList == null) || (Run.DisplayList == null)) {
-				Log.e(LOGTAG, "GR.onDraw: null DisplayList");
+				Log.e(LOGTAG, "GR.onDraw: null DisplayList(E1201)");
 				finish();								// lost context, bail out
 				return;
 			}

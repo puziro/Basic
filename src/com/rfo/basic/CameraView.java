@@ -158,7 +158,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 			surfaceChanged(mSurfaceHolder, 0, 0, 0);
 			break;
 		default:
-			Log.e(TAG, "Invalid picture mode " + mPictureMode);
+			Log.e(TAG, "Invalid picture mode(E1001) " + mPictureMode);
 			break;
 		}
 	}
@@ -199,7 +199,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 			try{
 				mCamera.takePicture(null, null, null, pngCallback);
 			} catch (Exception e){
-				Log.e(TAG, "Camera Exception " + e);
+				Log.e(TAG, "Camera Exception(E1002) " + e);
 			}
 		}
 	};
@@ -244,7 +244,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 			else { mCamera = Camera.open(mCameraNumber); }			// else use level >= 9 command
 		}
 		catch (Exception e){										// If open fails, we are done.
-			Log.e(TAG, "Camera open error: " + e);
+			Log.e(TAG, "Camera open error:(E1003) " + e);
 			mCamera = null;
 		}
 		if (mCamera != null) {
@@ -255,7 +255,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 				mCamera.startPreview();
 				mPreviewRunning = true;
 			} catch (Exception e) {
-				Log.e(TAG, "Camera start preview error : " + e);
+				Log.e(TAG, "Camera start preview error : (E1004)" + e);
 				try {
 					mCamera.stopPreview();
 				} catch (Exception e1) {
@@ -278,7 +278,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 				try {
 					mCamera.takePicture(null, null, null, pngCallback);
 				} catch (Exception e) {
-					Log.e(TAG, "CameraManual Exception " + e);
+					Log.e(TAG, "CameraManual Exception (E1005)" + e);
 				}
 			} else {
 				mCamera.autoFocus(focusCallback);
@@ -289,7 +289,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 	public void surfaceChanged(SurfaceHolder holder, int format, int w, int h) {
 //		Log.d(TAG, "surfaceChanged");
 		if (mCamera == null) {					// If no camera link then done
-			Log.e(TAG, "Surface changed. mCamera NULL ");
+			Log.e(TAG, "Surface changed. mCamera NULL (E1006)");
 			Run.CameraDone = true;
 			finish();
 			return;
@@ -302,7 +302,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 				try{
 					mCamera.takePicture(null, null, null, pngCallback);
 				} catch (Exception e){
-					Log.e(TAG, "CameraAuto Exception " + e);
+					Log.e(TAG, "CameraAuto Exception(E1007) " + e);
 				}
 			} else {
 				mCamera.autoFocus(focusCallback);
@@ -387,7 +387,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		try {
 			mCamera.setParameters(p);
 		} catch (Exception e) {
-			Log.e(TAG, "Camera parameter set error : " + e);
+			Log.e(TAG, "Camera parameter set error : (E1008" + e);
 			Run.CameraDone = true;
 			finish();
 			return false;

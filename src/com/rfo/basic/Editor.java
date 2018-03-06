@@ -397,7 +397,7 @@ public class Editor extends Activity {
 		super.onResume();
 
 		if (Basic.getContextManager() == null) {				// if we have lost context then restart Basic Activity
-			Log.e(LOGTAG, "onCreate: lost Context. Restarting BASIC!.");
+			Log.e(LOGTAG, "onCreate: lost Context. Restarting BASIC!.(E1101)");
 			Intent intent = new Intent(getApplicationContext(), Basic.class);
 			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			if (mSavedInstanceState != null) {					// send saved state so Basic can send it back
@@ -432,7 +432,7 @@ public class Editor extends Activity {
 		}
 
 		if (Basic.DoAutoRun) {
-			Log.e(LOGTAG, "onResume: AutoRun is set. Shutting down.");
+			Log.e(LOGTAG, "onResume: AutoRun is set. Shutting down.(E1102)");
 			finish();
 		} else {
 			setTitle(ProgramFileName);

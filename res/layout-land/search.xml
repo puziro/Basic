@@ -52,7 +52,7 @@ This file is part of BASIC! for Android
 			    android:layout_width="fill_parent"
 			    android:layout_height="wrap_content"
 			    android:layout_marginBottom="5dip"
-			    android:text="@string/Search_For:" />
+			    android:text="@string/Search_For" />
 
 			<EditText android:id="@+id/search_text"
 				android:layout_width="fill_parent"
@@ -98,7 +98,7 @@ This file is part of BASIC! for Android
 			    android:layout_width="fill_parent"
 			    android:layout_height="wrap_content"
 			    android:layout_marginBottom="5dip"
-			    android:text="@string/Replace_With:" />
+			    android:text="@string/Replace_With" />
 
 			<EditText android:id="@+id/replace_text"
 				android:layout_width="fill_parent"

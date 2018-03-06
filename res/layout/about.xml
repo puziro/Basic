@@ -107,6 +107,15 @@ This file is part of BASIC! for Android
 			android:layout_height="wrap_content"
 			android:text="@string/about_text_btn_privpol"
 			android:textAllCaps="false" />
+
+<Button
+			android:id="@+id/about_btn_tomonokai"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/about_btn_tomonokai"
+			android:textAllCaps="false" />
+
+
 	</LinearLayout>
 
 </ScrollView>
